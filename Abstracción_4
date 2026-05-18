@@ -1,0 +1,19 @@
+from abc import ABC, abstractmethod
+
+class Notificacion(ABC):
+    def enviar(self):
+        pass
+
+class Email(Notificacion):
+    def enviar(self):
+        return "Tienes nuevos Emails."
+    
+class SMS(Notificacion):
+    def enviar(self):
+        return "Tienes un nuevo mensaje."
+
+# objeto de prueba
+email = Email()
+sms = SMS()
+print(email.enviar())
+print(sms.enviar())
